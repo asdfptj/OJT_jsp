@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Chap05_DataShare</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 프로젝트 전체에서 사용 가능한 상수를 등록한다 -->
+	<context-param>
+		<param-name>email</param-name>
+		<param-value>admin@company.com</param-value>
+	</context-param>
+	<context-param>
+		<param-name>address</param-name>
+		<param-value>서울시 용산구 남산동 25-15</param-value>
+	</context-param>
+	
+	<!-- Filter. 기술한 순서대로 순차적으로 실행된다 -->
+	<filter>
+		<filter-name>FilterOne</filter-name>
+		<filter-class>com.company.common.FilterOne</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FilterOne</filter-name>
+		<!-- 어떤 서블릿이나 JSP 파일에서만 이 필터를 적용할 것인가를 지정 -->
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>FilterTwo</filter-name>
+		<filter-class>com.company.common.FilterTwo</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FilterTwo</filter-name>
+		<!-- 어떤 서블릿이나 JSP 파일에서만 이 필터를 적용할 것인가를 지정 -->
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+	
+	
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>com.company.common.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+	
+	
+	
+
+	<!-- Servlet -->
+	<servlet>
+		<servlet-name>A01ContextInit</servlet-name>
+		<servlet-class>com.company.part08.A01ContextInit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A01ContextInit</servlet-name>
+		<url-pattern>/A01ContextInit</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>A02ContextInit</servlet-name>
+		<servlet-class>com.company.part08.A02ContextInit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A02ContextInit</servlet-name>
+		<url-pattern>/A02ContextInit</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 이 서블릿에서만 사용 가능한 상수를 등록한다 -->
+	<servlet>
+		<servlet-name>A03ServletInit</servlet-name>
+		<servlet-class>com.company.part08.A03ServletInit</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>놀부</param-value>
+		</init-param>
+		<init-param>
+			<param-name>path</param-name>
+			<param-value>/webapp/WEB-INF/presentation.xml</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A03ServletInit</servlet-name>
+		<url-pattern>/A03ServletInit</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>A04Session</servlet-name>
+		<servlet-class>com.company.part08.A04Session</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A04Session</servlet-name>
+		<url-pattern>/A04Session</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>A04SessionResult</servlet-name>
+		<servlet-class>com.company.part08.A04SessionResult</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A04SessionResult</servlet-name>
+		<url-pattern>/A04SessionResult</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>A04SessionLogout</servlet-name>
+		<servlet-class>com.company.part08.A04SessionLogout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A04SessionLogout</servlet-name>
+		<url-pattern>/A04SessionLogout</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>A05Request</servlet-name>
+		<servlet-class>com.company.part08.A05Request</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A05Request</servlet-name>
+		<url-pattern>/A05Request</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>A05RequestResult</servlet-name>
+		<servlet-class>com.company.part08.A05RequestResult</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A05RequestResult</servlet-name>
+		<url-pattern>/A05RequestResult</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>A06Filter</servlet-name>
+		<servlet-class>com.company.part08.A06Filter</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A06Filter</servlet-name>
+		<url-pattern>/A06Filter</url-pattern>
+	</servlet-mapping>
+	
+	
+</web-app>

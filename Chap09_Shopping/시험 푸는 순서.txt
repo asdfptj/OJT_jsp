@@ -1,0 +1,22 @@
+1. 프로젝트 생성 - Dynamic Web Project
+2. JSP 작성
+3. CSS 작성
+4. include로 공통된 부분을 붙여 작성한다
+5. add 부분에 JavaScript로 검증 작성
+
+6. Database 테이블 작성
+7. insert 할 값은 준다고 하니까 테이블에 insert
+	insert에서 에러나면 테이블이 잘못만들짐. 
+	drop으로 지우고 새롭게 작성하고 다시 insert
+	
+	insert 끝나면 select 구문으로 제대로 입력했는지 확인해 봐야 한다
+	
+8. JDBCConnection 작성 - 코드는 제공해주니 그대로 친다
+	close method도 알아서 작성해 놓는다
+
+9. DAO 작성
+	기본 포멧을 작성 해 놓고 복퉅해서 사용하는 것이 빠르다
+10. 시험문제에 리스트 뿌리는 작업부터 먼저 작성한다
+	1) query 작성해서 요청하는데로 출력되는지 확인한다
+11. DAO의 각 메서드의 sql에 가져다 붙인다. - 개행 할 때 마지막줄 스페이스 주의
+ 

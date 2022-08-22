@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Chap03_Servlet_tesc</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>abc</servlet-name>
+		<servlet-class>com.company.part05.A01Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>abc</servlet-name>
+		<url-pattern>/first</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>A02Servlet</servlet-name>
+		<servlet-class>com.company.part05.A02Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>A02Servlet</servlet-name>
+		<url-pattern>/A02Servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>P179Params</servlet-name>
+		<servlet-class>com.company.part06.P179Params</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>P179Params</servlet-name>
+		<url-pattern>/html/P179Params.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>P200Login</servlet-name>
+		<servlet-class>com.company.part06.P200Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>P200Login</servlet-name>
+		<url-pattern>/html/P200Login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>P215Nine</servlet-name>
+		<servlet-class>com.company.part06.P215Nine</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>P215Nine</servlet-name>
+		<url-pattern>/P215Nine</url-pattern> <!-- path를 root에 설정 -->
+	</servlet-mapping>
+	
+	
+	
+</web-app>
